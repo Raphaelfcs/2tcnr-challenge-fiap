@@ -13,7 +13,7 @@ Desenvolvimento de uma solução para mobilidade urbana. Sendo assim a equipe Cl
 
 Além disso nosso projeto irá contar com um sistema de monitoramento do veículo e uma case para a chave do proprietário que será liberado após a aprovação do pagamento.
 
-## Projeto
+## Desenvolvimento
 
 #### Etapas de desenvolvimento
 
