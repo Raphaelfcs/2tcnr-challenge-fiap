@@ -61,7 +61,6 @@ Nesta etapa desenvolvemos o front-end do nosso site em HTML, CSS, NodeJS e Pytho
 
 Nesta etapa desenvolvemos o desenho de arquitetura na GCP e AWS que se encontra dentro da pasta **arquitetura**.
 
-FE_EKS_BE_VPN_GCP
 ![Arquitetura](img/FE_EKS_BE_VPN_GCP.jpeg)
 
 #### Etapa 5
