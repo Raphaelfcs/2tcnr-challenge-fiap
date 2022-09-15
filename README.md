@@ -47,6 +47,8 @@ Nesta etapa desenvolvemos o sistema de segurança para a chave do usuário utili
 
 ![ArqCaseSec](img/arq-case-sec.png)
 
+Ao usuário efetuar o pagamento ele irá receber um código no app e irá utilizar este código para desbloquear a caixa com a chave. Ao digitar a senha correta o servo motor irá girar puxando o ferrolho da caixa e liberando o acesso.
+
 **Colocar foto do dispositivo montado** --> LEMBRAR 
 
 #### Etapa 3
