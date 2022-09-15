@@ -53,7 +53,7 @@ Nesta etapa desenvolvemos o sistema de segurança para a chave do usuário utili
 
 Nesta etapa desenvolvemos o front-end do nosso site em HTML, CSS, NodeJS e Python que se encontra dentro da pasta **frontend**.
 
-![Fiap](img/website.png)
+![Website](img/website.png)
 
 #### Etapa 4
 
@@ -61,6 +61,8 @@ Nesta etapa desenvolvemos o front-end do nosso site em HTML, CSS, NodeJS e Pytho
 
 Nesta etapa desenvolvemos o desenho de arquitetura na GCP e AWS que se encontra dentro da pasta **arquitetura**.
 
+FE_EKS_BE_VPN_GCP
+![Arquitetura](img/FE_EKS_BE_VPN_GCP.jpeg)
 
 #### Etapa 5
 
