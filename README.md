@@ -1,7 +1,7 @@
 # Challenge Webmotors 2022 - Fiap
 ## Projeto CoudIt
 
-![Fiap](img/fiap.png)
+![Fiap](img/logo.png)
 
 ## Objetivo
 
