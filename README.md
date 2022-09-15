@@ -29,9 +29,15 @@ Além disso nosso projeto irá contar com um sistema de monitoramento do veícul
 
 Nesta etapa desenvolvemos o sistema de monitoramento utiizando tecnologias iot (internet of things). Para isso utilizamos os seguintes componentes:
 
-- **Preencher com os componentes utilizados** --> LEMBRAR
+- Arduino Nano R3
+- Potenciômetro 10 ohm
+- Módulo MCP2515
+- Cabo plug OBD2
+- Display LCD 16x16
 
-**Colocar foto do desenho de arq do iot e a foto do dispositivo montado** --> LEMBRAR
+![ArqMonitoring](img/arq-monitoring.png)
+
+**Colocar foto do dispositivo montado** --> LEMBRAR
 
 #### Etapa 2
 
@@ -71,4 +77,4 @@ Nesta etapa desenvolvemos o desenho de arquitetura na GCP e AWS que se encontra 
 
 **Implementação do back-end**
 
-Ir colocando os passos de desenvolvimento do nosso back-end
+**Ir colocando os passos de desenvolvimento do nosso back-end** --> LEMBRAR
