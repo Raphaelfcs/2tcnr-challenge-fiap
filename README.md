@@ -45,7 +45,9 @@ Nesta etapa desenvolvemos o sistema de segurança para a chave do usuário utili
 - Ferrolho
 - Caixa 3D
 
-**Colocar foto do desenho de arq do iot e a foto do dispositivo montado** --> LEMBRAR 
+![ArqCaseSec](img/arq-case-sec.png)
+
+**Colocar foto do dispositivo montado** --> LEMBRAR 
 
 #### Etapa 3
 
