@@ -6,7 +6,7 @@ Através do presente instrumento, eu________________________________, inscrito (
 
 ## **CLÁUSULA PRIMEIRA**
 
-#### Dados
+#### **Dados**
 
 O Titular autoriza a Controladora a realizar o tratamento, ou seja, a utilizar os seguintes dados, para os fins que serão relacionados na cláusula segunda:
 
@@ -28,33 +28,18 @@ O Titular autoriza a Controladora a realizar o tratamento, ou seja, a utilizar o
 
 ## **CLÁUSULA SEGUNDA**
 #### **Finalidade do Tratamento dos Dados**
+
 O Titular autoriza que a Controladora utilize os dados pessoais e dados pessoais sensíveis listados neste termo para as seguintes finalidades:
 
-– Permitir que a Controladora identifique e entre em contato com o titular, em razão do contrato de trabalho;
-
-– Para cumprimento de obrigações decorrentes da legislação, principalmente trabalhista e previdenciária, incluindo o disposto em Acordo ou Convenção Coletiva da categoria da Controladora;
-
-– Para procedimentos de admissão e execução do contrato de trabalho, inclusive após seu término;
-
+– Permitir que a Controladora identifique e entre em contato com o titular, em razão do contrato de serviço;
+- Permitir que a Controladora use dados do veículo que serão coletados em tempo real para utilização interna e externa com empresas associadas;
 – Para cumprimento, pela Controladora, de obrigações impostas por órgãos de fiscalização;
-
 – Quando necessário para a executar um contrato, no qual seja parte o titular;
-
 – A pedido do titular dos dados;
-
 – Para o exercício regular de direitos em processo judicial, administrativo ou arbitral;
-
-– Para a proteção da vida ou da incolumidade física do titular ou de terceiros;
-
-– Para a tutela da saúde, exclusivamente, em procedimento realizado por profissionais de saúde, serviços de saúde ou autoridade sanitária;
-
 – Quando necessário para atender aos interesses legítimos do controlador ou de terceiros, exceto no caso de prevalecerem direitos e liberdades fundamentais do titular que exijam a proteção dos dados pessoais;
-
-– Para contratação de serviços de ____________________ (por exemplo: vale alimentação, com a Empresa XXXX, de modo que somente serão repassados para a empresa contratada os dados pessoais de identificação do titular);
-
+– Para contratação de serviços de ____________________ (por exemplo: seguro de veículos, com Seguradoras, validação de veículos e pessoa, com a Empresa Webmotors, de modo que somente serão repassados para a empresa contratada os dados pessoais de identificação do titular);
 – Permitir que a Controladora utilize esses dados para a contratação e prestação de serviços diversos dos inicialmente ajustados, desde que o Titular também demonstre interesse em contratar novos serviços.
-
-**Nota**: Caso o empregador identifique hipótese não prevista acima, será necessário acrescentá-la nesta cláusula. Exemplos: fornecimento de dados pessoais do empregado para o fornecimento de plano de saúde e odontológico, vale alimentação, seguro de vida, plano de previdência privada, dentre outros.
 
 **Parágrafo Primeiro**: Caso seja necessário o compartilhamento de dados com terceiros que não tenham sido relacionados nesse termo ou qualquer alteração contratual posterior, será ajustado novo termo de consentimento para este fim (§ 6° do artigo 8° e § 2° do artigo 9° da Lei n° 13.709/2018).
 
@@ -109,3 +94,10 @@ Nome do Empregado (Titular)
 
 ______________________________________________
 Nome do Empregador (Controlador)
+
+
+
+5 % da transação da venda
+40% da transação do aluguel
+
+Não combra instalação nem anuncio, já estao inclusos nos respectivos planos
