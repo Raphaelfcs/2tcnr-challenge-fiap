@@ -73,15 +73,15 @@ Nesta etapa desenvolvemos o desenho de arquitetura na GCP e AWS que se encontra 
 
 Abaixo temos o desenho de arquitetura no provedor da AWS:
 
-![Arquitetura](img/AWS-ARCH.jpeg)
+![Arquitetura](arquitetura/cloud/AWS-ARCH.jpeg)
 
 Abaixo temos o desenho de arquitetura no provedor da GCP:
 
-![Arquitetura2](img/GCP-CLOUD.jpg)
+![Arquitetura2](arquitetura/cloud/GCP-CLOUD.jpg)
 
 Abaixo temos a integração entre os dois provedores e a topologia geral do projeto:
 
-![Arquitetura3](img/geral_integracao_aws_iot_gcp.jpg)
+![Arquitetura3](arquitetura/cloud/geral_integracao_aws_iot_gcp.jpg)
 
 #### Etapa 5
 
