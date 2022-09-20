@@ -71,7 +71,17 @@ Nesta etapa desenvolvemos o front-end do nosso site em HTML, CSS, NodeJS e Pytho
 
 Nesta etapa desenvolvemos o desenho de arquitetura na GCP e AWS que se encontra dentro da pasta **arquitetura**.
 
-![Arquitetura](img/FE_EKS_BE_VPN_GCP.jpeg)
+Abaixo temos o desenho de arquitetura no provedor da AWS:
+
+![Arquitetura](img/AWS-ARCH.jpeg)
+
+Abaixo temos o desenho de arquitetura no provedor da GCP:
+
+![Arquitetura2](img/GCP-CLOUD.jpg)
+
+Abaixo temos a integração entre os dois provedores e a topologia geral do projeto:
+
+![Arquitetura3](img/geral_integracao_aws_iot_gcp.jpg)
 
 #### Etapa 5
 
