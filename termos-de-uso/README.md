@@ -90,10 +90,3 @@ Nome do Empregado (Titular)
 
 ______________________________________________
 Nome do Empregador (Controlador)
-
-
-
-5 % da transação da venda
-40% da transação do aluguel
-
-Não combra instalação nem anuncio, já estao inclusos nos respectivos planos
