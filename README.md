@@ -48,8 +48,10 @@ Nesta etapa desenvolvemos o sistema de segurança para a chave do usuário utili
 - Arduino Uno
 - Servo motor
 - Teclado matricial 4x4
-- Ferrolho
+- Fechadura Ferrolho
 - Caixa 3D
+
+**Obs**: O desenho da caixa 3D está dentro da pasta **arduino/case-sec/case-sec-img**
 
 ![ArqCaseSec](img/arq-case-sec.png)
 
