@@ -81,7 +81,7 @@ O titular fica ciente de que a Controladora deverá permanecer com os seus dados
 
 As partes poderão entrar em acordo, quanto aos eventuais danos causados, caso exista o vazamento de dados pessoais ou acessos não autorizados, e caso não haja acordo, a Controladora tem ciência que estará sujeita às penalidades previstas no artigo 52 da Lei n° 13.709/2018:
 
-São Paulo, 06, Outubro e 2022.
+São Paulo, 06 de Outubro de 2022.
 
 Assinaturas:
 
