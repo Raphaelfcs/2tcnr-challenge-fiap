@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="pass.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
     <title>Webmonitors</title>
 </head>
 <body>
@@ -15,10 +15,10 @@
     </div>
   </div>
     <div class="inputField">
-        <h2>Gere uma senha para desbloquear a caixa de segurança</h2>
+        <h2>Gere uma senha e envie para desbloquear a caixa de segurança</h2>
         <input type="text" name="" placeholder="A sua senha aparecerá aqui" id="password" readonly="">
         <div id="btn" onclick="getPassword()">Gerar Senha</div>
-        <div id="copyBtn">Copiar Senha</div>
+        <div id="copyBtn">Enviar Senha</div>
     </div>
 <div id="myModal" class="modal" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
@@ -27,7 +27,7 @@
         <h5 class="modal-title">Aviso</h5>
       </div>
       <div class="modal-body">
-        <p>Senha copiada com sucesso.</p>
+        <p>Senha enviada com sucesso.</p>
       </div>
       <div class="modal-footer">
         <button type="button" onclick="closeBtn()" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
@@ -38,16 +38,10 @@
 <script type="text/javascript">
 
     function getPassword(){
-        var chars = "0123456789"
+        $.get("http://localhost:3030/getnumber", function(data, status){
+      document.getElementById("password").value = data.number
+    });
         
-        var passwordLenght = 3;
-        var password ="";
-
-        for(var i=0; i<passwordLenght; i++){
-            var randomNumber = Math.floor(Math.random()* chars.length);
-            password += chars.substring(randomNumber,randomNumber+1);
-        }
-        document.getElementById("password").value = password
     }
 
     var modal = document.getElementById("myModal");
@@ -77,6 +71,8 @@
     }
 
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="getAPI.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
