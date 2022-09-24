@@ -1,7 +1,7 @@
 #include <Servo.h>
 #include <Keypad.h>
 Servo ServoMotor;
-char* password = "888"; // Colocar uma senha de até 3 caracteres
+char* password = "888"; // Esta senha será modificada automaticamente através do gerador de senha que criamos
 int position = 0;
 const byte ROWS = 4;
 const byte COLS = 4;
