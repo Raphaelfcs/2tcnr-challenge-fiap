@@ -34,9 +34,6 @@ O Titular autoriza que a Controladora utilize os dados pessoais e dados pessoais
 - Permitir que a Controladora use dados do veículo que serão coletados em tempo real para utilização interna e externa com empresas associadas;
 – Para cumprimento, pela Controladora, de obrigações impostas por órgãos de fiscalização;
 – Quando necessário para a executar um contrato, no qual seja parte o titular;
-– A pedido do titular dos dados;
-– Para o exercício regular de direitos em processo judicial, administrativo ou arbitral;
-– Quando necessário para atender aos interesses legítimos do controlador ou de terceiros, exceto no caso de prevalecerem direitos e liberdades fundamentais do titular que exijam a proteção dos dados pessoais;
 – Para contratação de serviços de ____________________ (por exemplo: seguro de veículos, com Seguradoras, validação de veículos e pessoa, com a Empresa Webmotors, de modo que somente serão repassados para a empresa contratada os dados pessoais de identificação do titular);
 – Permitir que a Controladora utilize esses dados para a contratação e prestação de serviços diversos dos inicialmente ajustados, desde que o Titular também demonstre interesse em contratar novos serviços.
 
@@ -47,7 +44,7 @@ O Titular autoriza que a Controladora utilize os dados pessoais e dados pessoais
 ## **CLÁUSULA TERCEIRA**
 #### **Compartilhamento de Dados**
 
-A Controladora fica autorizada a compartilhar os dados pessoais do Titular com outros agentes de tratamento de dados, caso seja necessário para as finalidades listadas neste instrumento, desde que, sejam respeitados os princípios da boa-fé, finalidade, adequação, necessidade, livre acesso, qualidade dos dados, transparência, segurança, prevenção, não discriminação e responsabilização e prestação de contas.
+A Controladora fica autorizada a compartilhar os dados pessoais do Titular com a Webmotors e seguradoras, caso seja necessário para as finalidades listadas neste instrumento, desde que, sejam respeitados os princípios da boa-fé, finalidade, adequação, necessidade, livre acesso, qualidade dos dados, transparência, segurança, prevenção, não discriminação e responsabilização e prestação de contas.
 
 ## **CLÁUSULA QUARTA**
 #### **Responsabilidade pela Segurança dos Dados**
@@ -62,7 +59,7 @@ A Controladora se responsabiliza por manter medidas de segurança, técnicas e a
 ## **CLÁUSULA SEXTA**
 #### **Direito de Revogação do Consentimento**
 
-O Titular poderá revogar seu consentimento com 30 dias de antecedência, por e-mail ou por carta escrita, conforme o artigo 8°, § 5°, da Lei n° 13.709/2020.
+O Titular poderá revogar seu consentimento a qualquer momento, conforme o artigo 8°, § 5°, da Lei n° 13.709/2020.
 
 O Titular fica ciente de que a Controladora poderá permanecer utilizando os dados para as seguintes finalidades:
 
@@ -74,19 +71,14 @@ O Titular fica ciente de que a Controladora poderá permanecer utilizando os dad
 ## **CLÁUSULA SÉTIMA**
 #### **Tempo de Permanência dos Dados Recolhidos**
 
-O titular fica ciente de que a Controladora deverá permanecer com os seus dados pelo período mínimo de guarda de documentos, bem como os relacionados à ao veículo, mesmo após o encerramento do vínculo.
-
-## **CLÁUSULA OITAVA**
-#### **Vazamento de Dados ou Acessos Não Autorizados – Penalidades**
-
-As partes poderão entrar em acordo, quanto aos eventuais danos causados, caso exista o vazamento de dados pessoais ou acessos não autorizados, e caso não haja acordo, a Controladora tem ciência que estará sujeita às penalidades previstas no artigo 52 da Lei n° 13.709/2018:
+O titular fica ciente de que a Controladora deverá permanecer com os seus dados pelo período mínimo de guarda de documentos, bem como os relacionados ao veículo, mesmo após o encerramento do vínculo, para cumprimento de obrigações legais.
 
 São Paulo, 06 de Outubro de 2022.
 
 Assinaturas:
 
 ________________________________________
-Nome do Empregado (Titular)
+Cliente (Titular)
 
 ______________________________________________
-Nome do Empregador (Controlador)
+Empresa (Controlador)
