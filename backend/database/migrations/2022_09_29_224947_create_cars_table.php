@@ -19,6 +19,9 @@ class CreateCarsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
 
+            $table->integer('status')
+                ->default(0)
+                ->comment('0 - pending / 1 - approved / 2 - rejected');
             $table->string('modalidade')->comment('1 - aluguel, 2 - venda');
             $table->string('modelo');
             $table->string('placa');

@@ -80,14 +80,14 @@
                             <div class="card-price-wrapper">
 
                                 <p class="card-price">
-                                    <strong>R${{ $car->preco }}</strong> / dia
+                                    <strong>R${{ $car->preco }}</strong> @if($car->modalidade == 1) / dia @endif
                                 </p>
 
                                 <button class="btn fav-btn" aria-label="Add to favourite list">
                                     <ion-icon name="heart-outline"></ion-icon>
                                 </button>
 
-                                <button class="btn">{{ $car->getModalidadeCliente() }}</button>
+                                <button class="btn" onclick="location.href = '{{ route('showCar', $car) }}'">{{ $car->getModalidadeCliente() }}</button>
 
                             </div>
 

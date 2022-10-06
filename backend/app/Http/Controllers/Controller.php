@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Car;
+use App\Models\User;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -24,6 +25,43 @@ class Controller extends BaseController
     public function plans()
     {
         return view('plans');
+    }
+
+    public function showCar(Car $car)
+    {
+        return view('car.show')
+            ->with('car', $car);
+    }
+
+    public function showCarInfo(Car $car)
+    {
+        return view('car.info')
+            ->with('car', $car);
+    }
+
+    public function actionCar(Car $car)
+    {
+        return view('car.payment')
+            ->with('car', $car);
+    }
+
+    public function actionCarSave(Request $request)
+    {
+        dd($request->all());
+        auth()->user()->payment()->create([
+            "name" => $request->name,
+            "address" => $request->address,
+            "city" => $request->city,
+            "state" => $request->state,
+            "cep" => $request->cep,
+            "holder_name" => $request->card_name,
+            "card_number" => $request->number,
+            "month" => $request->month,
+            "year" => $request->year,
+            "cvv" => $request->cvv,
+        ]);
+
+        return redirect()->route('dashboard');
     }
 
     public function userPlans()
@@ -87,6 +125,11 @@ class Controller extends BaseController
         return view('pendingAnalysis');
     }
 
+    public function reprovedAnalysis()
+    {
+        return view('reprovedAnalysis');
+    }
+
     public function saveAnalysis(Request $request)
     {
         auth()->user()->analysis()->create([
@@ -98,5 +141,66 @@ class Controller extends BaseController
         ]);
 
         return redirect()->route('dashboard');
+    }
+
+    public function adminCars()
+    {
+        $cars = Car::all();
+
+        return view('car.approve')
+            ->with('cars', $cars);
+    }
+
+    public function adminCarApprove(Car $car)
+    {
+        $car->update(['status' => 1]);
+
+        session()->flash('success', 'Carro aprovado com sucesso!');
+
+        return redirect()->back();
+    }
+
+    public function adminCarDecline(Car $car)
+    {
+        $car->update(['status' => 2]);
+
+        session()->flash('success', 'Carro reprovado com sucesso!');
+
+        return redirect()->back();
+    }
+
+    public function adminUsers()
+    {
+        $users = User::all()
+            ->load('analysis');
+
+        return view('user.approve')
+            ->with('users', $users);
+    }
+
+    public function adminUserApprove(User $user)
+    {
+        if ($user->plan !== 2) {
+            abort(404);
+        }
+
+        $user->analysis()->update(['status' => 1]);
+
+        session()->flash('success', 'Análise do usuário aprovado com sucesso!');
+
+        return redirect()->back();
+    }
+
+    public function adminUserDecline(User $user)
+    {
+        if ($user->plan !== 2) {
+            abort(404);
+        }
+
+        $user->analysis()->update(['status' => 2]);
+
+        session()->flash('success', 'Análise do usuário reprovado com sucesso!');
+
+        return redirect()->back();
     }
 }

@@ -41,47 +41,48 @@
                 <div class="profile">
                     <div class="info">
                         <p>Olá, <b>{{ auth()->user()->name }}</b></p>
-                        <small class="text-muted">Nível 1</small>
+                        <small class="text-muted">{{ auth()->user()->planDescription() }}</small>
                     </div>
                     <div class="profile-photo">
                         <img src="/img/profile.jpg">
                     </div>
                 </div>
-    </div>
+        </div>
 
-        <div class="recent-updates">
-            <h2>Central de Notificação</h2>
-            <div class="updates">
-                <div class="update">
-                    <div class="profile-photo">
-                        <img src="/img/profile2.jpg">
+        @if(!auth()->user()->admin())
+            <div class="recent-updates">
+                <h2>Central de Notificação</h2>
+                <div class="updates">
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="/img/profile2.jpg">
+                        </div>
+                        <div class="message">
+                            <p><b>Roberto</b> gostaria de negociar o valor de compra do seu HB20.</p>
+                            <small class="text-muted">2 Horas Atrás</small>
+                        </div>
                     </div>
-                    <div class="message">
-                        <p><b>Roberto</b> gostaria de negociar o valor de compra do seu HB20.</p>
-                        <small class="text-muted">2 Horas Atrás</small>
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="/img/profile3.jpg">
+                        </div>
+                        <div class="message">
+                            <p><b>Carla</b> acabou de alugar o seu Honda HR-V.</p>
+                            <small class="text-muted">3 Horas Atrás</small>
+                        </div>
                     </div>
-                </div>
-                <div class="update">
-                    <div class="profile-photo">
-                        <img src="/img/profile3.jpg">
-                    </div>
-                    <div class="message">
-                        <p><b>Carla</b> acabou de alugar o seu Honda HR-V.</p>
-                        <small class="text-muted">3 Horas Atrás</small>
-                    </div>
-                </div>
-                <div class="update">
-                    <div class="profile-photo">
-                        <img src="/img/profile4.jpg">
-                    </div>
-                    <div class="message">
-                        <p><b>Júlia</b> acabou de comprar o seu Honda Civic Si.</p>
-                        <small class="text-muted">10 Horas Atrás</small>
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="/img/profile4.jpg">
+                        </div>
+                        <div class="message">
+                            <p><b>Júlia</b> acabou de comprar o seu Honda Civic Si.</p>
+                            <small class="text-muted">10 Horas Atrás</small>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="sales-analytics">
+            <div class="sales-analytics">
             <h2>Seus Produtos</h2>
             <div class="item online">
                 <div class="icon">
@@ -129,6 +130,7 @@
                 </div>
             </div>
         </div>
+        @endif
 
         <script src="/js/main.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js" type="text/javascript"></script>

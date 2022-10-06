@@ -36,6 +36,12 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    const PLANS = [
+        0 => 'Plano Básico',
+        1 => 'Plano Pessoal',
+        2 => 'Plano Empresa'
+    ];
+
     /**
      * The attributes that should be cast.
      *
@@ -57,7 +63,7 @@ class User extends Authenticatable
 
     public function admin()
     {
-        return $this->admin === true;
+        return $this->admin == 1;
     }
 
     public function missingPlan()
@@ -84,6 +90,35 @@ class User extends Authenticatable
     {
         $analysis = $this->analysis;
 
-        return $analysis !== null && $analysis->status === 0;
+        return $analysis !== null && $analysis->status == 0;
+    }
+
+    public function reprovedAnalysis()
+    {
+        $analysis = $this->analysis;
+
+        return $analysis !== null && $analysis->status == 2;
+    }
+
+    public function planDescription()
+    {
+        return self::PLANS[$this->plan] ?? 'Administrador';
+    }
+
+    public function getStatus()
+    {
+        if ($this->plan !== 2) {
+            return 'Ativo';
+        }
+
+        if ($this->needsAnalysis()) {
+            return 'Análise Pendente';
+        }
+
+        if ($this->pendingAnalysis()) {
+            return 'Aguardando aprovação';
+        }
+
+        return 'Análise ' . $this->analysis->getStatus();
     }
 }

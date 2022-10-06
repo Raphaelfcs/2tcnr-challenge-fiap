@@ -16,6 +16,25 @@ class CheckPlan
      */
     public function handle(Request $request, Closure $next)
     {
+        if (auth()->user()->admin()) {
+            if (
+                $request->path() == 'user/plans' ||
+                $request->path() == 'user/terms' ||
+                $request->path() == 'payments' ||
+                $request->path() == 'analysis' ||
+                $request->path() == 'pending/analysis'
+            ) {
+                return redirect()->to('dashboard');
+            }
+
+            if ($request->path() == 'dashboard')
+            {
+                return redirect()->to('admin/cars');
+            }
+
+            return $next($request);
+        }
+
         if ($request->path() == 'user/plans') {
 
             if (!auth()->user()->missingPlan()) {
@@ -52,6 +71,12 @@ class CheckPlan
                     return redirect()->to('dashboard');
                 } else if (auth()->user()->pendingAnalysis() && $request->path() != 'pending/analysis') {
                     return redirect()->to('pending/analysis');
+                }
+
+                if (!auth()->user()->reprovedAnalysis() && $request->path() == 'reproved/analysis') {
+                    return redirect()->to('dashboard');
+                } else if (auth()->user()->reprovedAnalysis() && $request->path() != 'reproved/analysis') {
+                    return redirect()->to('reproved/analysis');
                 }
 
             }

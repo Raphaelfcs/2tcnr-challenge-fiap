@@ -90,114 +90,118 @@
         </div>
     </div>
 </section>
-<!-- Services -->
-<section class="services" id="services">
+@if($cars->count() > 0)
+    <!-- Services -->
+    <section class="services" id="services">
     <div class="heading">
         <span>Web List</span>
         <h1>Explore os carros mais bem avaliados</h1>
     </div>
     <div class="services-container">
-        <div class="box">
-            <div class="box-img">
-                <img src="/img/car1.jpg" alt="">
+        @foreach($cars as $car)
+            <div class="box">
+                <div class="box-img">
+                    <img src="{{ $car->imagem_path }}" alt="">
+                </div>
+                <p>{{ $car->ano }}</p>
+                <h3>{{ $car->modelo }}</h3>
+                <h2>R${{ $car->preco }} @if($car->modalidade == 1)<span>/dia</span>@endif | 38000 <span>/km</span></h2>
+                <a href="{{ route('showCar', $car) }}" class="btn">{{ $car->getModalidadeCliente() }}</a>
             </div>
-            <p>2020</p>
-            <h3>Honda Civic Si</h3>
-            <h2>R$720 <span>/dia</span> | 38000 <span>/km</span></h2>
-            <a href="panel/panel.html" class="btn">Alugar</a>
-        </div>
+        @endforeach
 
-        <div class="box">
-            <div class="box-img">
-                <img src="/img/car2.jpg" alt="">
-            </div>
-            <p>2020</p>
-            <h3>Honda HR-V</h3>
-            <h2>R$780 <span>/dia</span> | 38000 <span>/km</span></h2>
-            <a href="panel/panel2.html" class="btn">Alugar</a>
-        </div>
+{{--        <div class="box">--}}
+{{--            <div class="box-img">--}}
+{{--                <img src="/img/car2.jpg" alt="">--}}
+{{--            </div>--}}
+{{--            <p>2020</p>--}}
+{{--            <h3>Honda HR-V</h3>--}}
+{{--            <h2>R$780 <span>/dia</span> | 38000 <span>/km</span></h2>--}}
+{{--            <a href="panel/panel2.html" class="btn">Alugar</a>--}}
+{{--        </div>--}}
 
-        <div class="box">
-            <div class="box-img">
-                <img src="/img/car3.jpg" alt="">
-            </div>
-            <p>2023</p>
-            <h3>Renault Kwid</h3>
-            <h2>R$64.190 <span>/à vista</span> | 38000 <span>/km</span></h2>
-            <a href="panel/panel3.html" class="btn">Comprar</a>
-        </div>
+{{--        <div class="box">--}}
+{{--            <div class="box-img">--}}
+{{--                <img src="/img/car3.jpg" alt="">--}}
+{{--            </div>--}}
+{{--            <p>2023</p>--}}
+{{--            <h3>Renault Kwid</h3>--}}
+{{--            <h2>R$64.190 <span>/à vista</span> | 38000 <span>/km</span></h2>--}}
+{{--            <a href="panel/panel3.html" class="btn">Comprar</a>--}}
+{{--        </div>--}}
 
-        <div class="box">
-            <div class="box-img">
-                <img src="/img/car4.jpg" alt="">
-            </div>
-            <p>2020</p>
-            <h3>T-Cross</h3>
-            <h2>R$720 <span>/dia</span> | 38000 <span>/km</span></h2>
-            <a href="panel/panel4.html" class="btn">Alugar</a>
-        </div>
+{{--        <div class="box">--}}
+{{--            <div class="box-img">--}}
+{{--                <img src="/img/car4.jpg" alt="">--}}
+{{--            </div>--}}
+{{--            <p>2020</p>--}}
+{{--            <h3>T-Cross</h3>--}}
+{{--            <h2>R$720 <span>/dia</span> | 38000 <span>/km</span></h2>--}}
+{{--            <a href="panel/panel4.html" class="btn">Alugar</a>--}}
+{{--        </div>--}}
 
-        <div class="box">
-            <div class="box-img">
-                <img src="/img/car5.jpg" alt="">
-            </div>
-            <p>2020</p>
-            <h3>Nissan Kicks</h3>
-            <h2>R$800 <span>/dia</span> | 38000 <span>/km</span></h2>
-            <a href="panel/panel5.html" class="btn">Alugar</a>
-        </div>
+{{--        <div class="box">--}}
+{{--            <div class="box-img">--}}
+{{--                <img src="/img/car5.jpg" alt="">--}}
+{{--            </div>--}}
+{{--            <p>2020</p>--}}
+{{--            <h3>Nissan Kicks</h3>--}}
+{{--            <h2>R$800 <span>/dia</span> | 38000 <span>/km</span></h2>--}}
+{{--            <a href="panel/panel5.html" class="btn">Alugar</a>--}}
+{{--        </div>--}}
 
-        <div class="box">
-            <div class="box-img">
-                <img src="/img/car6.jpg" alt="">
-            </div>
-            <p>2020</p>
-            <h3>Chevrolet Onix</h3>
-            <h2>R$380 <span>/dia</span> | 38000 <span>/km</span></h2>
-            <a href="panel/panel6.html" class="btn">Alugar</a>
-        </div>
+{{--        <div class="box">--}}
+{{--            <div class="box-img">--}}
+{{--                <img src="/img/car6.jpg" alt="">--}}
+{{--            </div>--}}
+{{--            <p>2020</p>--}}
+{{--            <h3>Chevrolet Onix</h3>--}}
+{{--            <h2>R$380 <span>/dia</span> | 38000 <span>/km</span></h2>--}}
+{{--            <a href="panel/panel6.html" class="btn">Alugar</a>--}}
+{{--        </div>--}}
 
-        <div class="box">
-            <div class="box-img">
-                <img src="/img/car7.jpg" alt="">
-            </div>
-            <p>2021</p>
-            <h3>Jeep Compass</h3>
-            <h2>R$215.900 <span>/à vista</span> | 38000 <span>/km</span></h2>
-            <a href="panel/panel7.html" class="btn">Comprar</a>
-        </div>
+{{--        <div class="box">--}}
+{{--            <div class="box-img">--}}
+{{--                <img src="/img/car7.jpg" alt="">--}}
+{{--            </div>--}}
+{{--            <p>2021</p>--}}
+{{--            <h3>Jeep Compass</h3>--}}
+{{--            <h2>R$215.900 <span>/à vista</span> | 38000 <span>/km</span></h2>--}}
+{{--            <a href="panel/panel7.html" class="btn">Comprar</a>--}}
+{{--        </div>--}}
 
-        <div class="box">
-            <div class="box-img">
-                <img src="/img/car8.jpg" alt="">
-            </div>
-            <p>2021</p>
-            <h3>BMW X1</h3>
-            <h2>R$1.600 <span>/dia</span> | 38000 <span>/km</span></h2>
-            <a href="panel/panel8.html" class="btn">Alugar</a>
-        </div>
+{{--        <div class="box">--}}
+{{--            <div class="box-img">--}}
+{{--                <img src="/img/car8.jpg" alt="">--}}
+{{--            </div>--}}
+{{--            <p>2021</p>--}}
+{{--            <h3>BMW X1</h3>--}}
+{{--            <h2>R$1.600 <span>/dia</span> | 38000 <span>/km</span></h2>--}}
+{{--            <a href="panel/panel8.html" class="btn">Alugar</a>--}}
+{{--        </div>--}}
 
-        <div class="box">
-            <div class="box-img">
-                <img src="/img/car9.jpg" alt="">
-            </div>
-            <p>2018</p>
-            <h3>HB20</h3>
-            <h2>R$48.900 <span>/à vista</span> | 38000 <span>/km</span></h2>
-            <a href="panel/panel9.html" class="btn">Comprar</a>
-        </div>
+{{--        <div class="box">--}}
+{{--            <div class="box-img">--}}
+{{--                <img src="/img/car9.jpg" alt="">--}}
+{{--            </div>--}}
+{{--            <p>2018</p>--}}
+{{--            <h3>HB20</h3>--}}
+{{--            <h2>R$48.900 <span>/à vista</span> | 38000 <span>/km</span></h2>--}}
+{{--            <a href="panel/panel9.html" class="btn">Comprar</a>--}}
+{{--        </div>--}}
 
-        <div class="box">
-            <div class="box-img">
-                <img src="/img/car10.jpg" alt="">
-            </div>
-            <p>2021</p>
-            <h3>Tiggo 7</h3>
-            <h2>R$1.200 <span>/dia</span> | 38000 <span>/km</span></h2>
-            <a href="panel/panel10.html" class="btn">Alugar</a>
-        </div>
+{{--        <div class="box">--}}
+{{--            <div class="box-img">--}}
+{{--                <img src="/img/car10.jpg" alt="">--}}
+{{--            </div>--}}
+{{--            <p>2021</p>--}}
+{{--            <h3>Tiggo 7</h3>--}}
+{{--            <h2>R$1.200 <span>/dia</span> | 38000 <span>/km</span></h2>--}}
+{{--            <a href="panel/panel10.html" class="btn">Alugar</a>--}}
+{{--        </div>--}}
     </div>
 </section>
+@endif
 <!-- About -->
 <section class="about" id="about">
     <div class="heading">

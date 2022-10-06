@@ -17,11 +17,18 @@ use App\Http\Controllers\CarsController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $cars = \App\Models\Car::whereStatus(1)->get();
+
+    return view('welcome')
+        ->with('cars', $cars);
 });
 
 Route::get('garage', [Controller::class, 'garage'])->name('garage');
 Route::get('plans', [Controller::class, 'plans'])->name('plans');
+Route::get('car/{car}', [Controller::class, 'showCar'])->name('showCar');
+Route::get('car/{car}/info', [Controller::class, 'showCarInfo'])->name('showCarInfo');
+Route::get('car/{car}/action', [Controller::class, 'actionCar'])->name('actionCar');
+Route::post('car/{car}/action', [Controller::class, 'actionCarSave'])->name('actionCarSave');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -40,11 +47,22 @@ Route::middleware(['auth', 'check.plan'])->group(function() {
     Route::get('analysis', [Controller::class, 'analysis'])->name('analysis');
     Route::post('analysis', [Controller::class, 'saveAnalysis'])->name('analysis.save');
     Route::get('pending/analysis', [Controller::class, 'pendingAnalysis'])->name('pendingAnalysis');
+    Route::get('reproved/analysis', [Controller::class, 'reprovedAnalysis'])->name('reprovedAnalysis');
 
     Route::get('car', [CarsController::class, 'create'])->name('car.create');
     Route::post('car', [CarsController::class, 'save'])->name('car.save');
     Route::delete('car/{car}', [CarsController::class, 'delete'])->name('car.delete');
     Route::get('cars', [CarsController::class, 'index'])->name('cars.index');
+});
+
+Route::middleware(['auth', 'check.plan', 'admin'])->group(function() {
+    Route::get('admin/cars', [Controller::class, 'adminCars'])->name('adminCars');
+    Route::post('admin/car/{car}/approve', [Controller::class, 'adminCarApprove'])->name('adminCarApprove');
+    Route::post('admin/car/{car}/decline', [Controller::class, 'adminCarDecline'])->name('adminCarDecline');
+
+    Route::get('admin/users', [Controller::class, 'adminUsers'])->name('adminUsers');
+    Route::post('admin/user/{user}/approve', [Controller::class, 'adminUserApprove'])->name('adminUserApprove');
+    Route::post('admin/user/{user}/decline', [Controller::class, 'adminUserDecline'])->name('adminUserDecline');
 });
 
 require __DIR__.'/auth.php';

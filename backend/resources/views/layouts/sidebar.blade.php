@@ -1,8 +1,13 @@
 
 @if(auth()->user()->admin())
-    <a href="#">
-        <span class="material-icons-sharp">person_outline</span>
-        <h3>Perfil</h3>
+    <a href="{{ route('adminUsers') }}">
+        <span class="material-icons-sharp">person</span>
+        <h3>Usuários</h3>
+    </a>
+
+    <a href="{{ route('adminCars') }}">
+        <span class="material-icons-sharp">directions_car</span>
+        <h3>Carros</h3>
     </a>
 @else
     <a href="#">

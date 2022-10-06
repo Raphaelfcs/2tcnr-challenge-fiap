@@ -18,4 +18,15 @@ class Analysis extends Model
         "car_fleet_size",
         "localization",
     ];
+
+    const STATUS = [
+        0 => 'Pendente',
+        1 => 'Aprovado',
+        2 => 'Reprovado',
+    ];
+
+    public function getStatus()
+    {
+        return self::STATUS[$this->status];
+    }
 }

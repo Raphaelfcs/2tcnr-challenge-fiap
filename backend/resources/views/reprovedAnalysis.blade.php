@@ -9,14 +9,14 @@
 </head>
 <body>
 <div class="popup">
-    <img src="/img/correct.png">
-    <h2>Análise enviada!</h2>
-    <p>Iremos analisar as informações repassadas e entraremos em contato.</p>
+    <img src="/img/incorrect.png">
+    <h2>Análise recusada!</h2>
+    <p>Sua solicitação foi recusada, entre em contato com o suporte para maiores informações!</p>
     <form method="POST" action="{{ route('logout') }}">
         @csrf
 
         <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
-            <button type="button" onclick="location.href = '/'">Voltar</button>
+            <button type="button" onclick="location.href = '/'">Sair</button>
         </a>
     </form>
 </div>

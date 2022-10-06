@@ -22,7 +22,30 @@ class Car extends Model
         "condicao",
         "descricao",
         "imagem_path",
+        "status",
     ];
+
+    const STATUS = [
+        0 => 'Pendente',
+        1 => 'Aprovado',
+        2 => 'Reprovado',
+    ];
+
+    const STATUS_CLASS = [
+        0 => 'warning',
+        1 => 'success',
+        2 => 'primary',
+    ];
+
+    public function getStatus()
+    {
+        return self::STATUS[$this->status];
+    }
+
+    public function getStatusClass()
+    {
+        return self::STATUS_CLASS[$this->status];
+    }
 
     public function getModalidade()
     {

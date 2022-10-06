@@ -17,6 +17,7 @@
     <form action="" method="POST">
         @csrf
 
+        <h3 class="title" style="margin-bottom: 20px">{{ $car->getModalidadeCliente() }} carro: {{ $car->modelo }} / {{ $car->ano }} por R${{ $car->preco }} @if($car->modalidade == 1) / dia @endif</h3>
         <div class="row">
 
             <div class="col">
@@ -26,6 +27,10 @@
                 <div class="inputBox">
                     <span>Nome completo:</span>
                     <input type="text" placeholder="" name="name" required>
+                </div>
+                <div class="inputBox">
+                    <span>Email:</span>
+                    <input type="text" placeholder="" name="email" required>
                 </div>
                 <div class="inputBox">
                     <span>Endereço:</span>
@@ -65,11 +70,11 @@
                     <span>Número do cartão:</span>
                     <input type="number" placeholder="" name="number" required>
                 </div>
+                <div class="inputBox">
+                    <span>Mês:</span>
+                    <input type="number" placeholder="" name="month" required>
+                </div>
                 <div class="flex">
-                    <div class="inputBox">
-                        <span>Mês:</span>
-                        <input type="number" placeholder="" name="month" required>
-                    </div>
                     <div class="inputBox">
                         <span>Ano:</span>
                         <input type="number" placeholder="" name="year" required>
@@ -84,7 +89,8 @@
 
         </div>
 
-        <input type="submit" value="Confirmar pagamento" class="submit-btn">
+        <input type="button" style="width: calc(50% - 2.15px); background-color: #c0c0c0" onclick="history.back()" value="Voltar" class="submit-btn">
+        <input type="submit" style="width: calc(50% - 2.15px)" value="Confirmar pagamento" class="submit-btn">
 
     </form>
 
