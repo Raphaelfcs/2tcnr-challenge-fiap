@@ -1,0 +1,19 @@
+An example Ingress that makes use of the controller:
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: grafana
+  namespace: ingress-nginx
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: a5b460d95a2e8460c94bdcdafdb90215-71949636.us-east-1.elb.amazonaws.com
+      http:
+        paths:
+          - pathType: ImplementationSpecific
+            backend:
+              service:
+                name: grafana
+                port:
+                  number: 3000
+            path: /

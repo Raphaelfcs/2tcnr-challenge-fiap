@@ -1,126 +1,76 @@
-provider "aws" {
-  region = local.region
+data "aws_vpc" "vpc" {
+  filter {
+    name   = "tag:Name"
+    values = ["cloudit-acquire-sandbox"]
+  }
+}
+
+data "aws_subnet_ids" "private" {
+  vpc_id = data.aws_vpc.vpc.id
+  filter {
+    name   = "tag:Name"
+    values = ["cloudit-acquire-dmz*"]
+  }
 }
 
 locals {
-  name   = "complete-mssql"
+  name   = "complete-mysql"
   region = "us-east-1"
   tags = {
     Owner       = "user"
     Environment = "dev"
-    Name = CloudIotDb
   }
 }
-
-################################################################################
-# Supporting Resources
-################################################################################
-
 
 module "security_group" {
   source  = "terraform-aws-modules/security-group/aws"
   version = "~> 4.0"
 
   name        = local.name
-  description = "Complete SqlServer example security group"
-  vpc_id      = #id_vpc_data
+  description = "Complete MySQL example security group"
+  vpc_id      = data.aws_vpc.vpc.id
+
   # ingress
   ingress_with_cidr_blocks = [
     {
-      from_port   = 1433
-      to_port     = 1433
+      from_port   = 3306
+      to_port     = 3306
       protocol    = "tcp"
-      description = "SqlServer access from within VPC"
-      cidr_blocks = #Data para pegar o CIDR_do data da vpc#module.vpc.vpc_cidr_block
+      description = "MySQL access from within VPC"
+      cidr_blocks = "12.10.0.0/16"
     },
   ]
 
   tags = local.tags
 }
 
-################################################################################
-# IAM Role for Windows Authentication
-################################################################################
-
-data "aws_iam_policy_document" "rds_assume_role" {
-  statement {
-    sid = "AssumeRole"
-
-    actions = [
-      "sts:AssumeRole",
-    ]
-
-    principals {
-      type        = "Service"
-      identifiers = ["rds.amazonaws.com"]
-    }
-  }
-}
-
-resource "aws_iam_role" "rds_ad_auth" {
-  name                  = "demo-rds-ad-auth"
-  description           = "Role used by RDS for Active Directory authentication and authorization"
-  force_detach_policies = true
-  assume_role_policy    = data.aws_iam_policy_document.rds_assume_role.json
-
-  tags = local.tags
-}
-
-resource "aws_iam_role_policy_attachment" "rds_directory_services" {
-  role       = aws_iam_role.rds_ad_auth.id
-  policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonRDSDirectoryServiceAccess"
-}
-
-################################################################################
-# AWS Directory Service (Acitve Directory)
-################################################################################
-
-resource "aws_directory_service_directory" "demo" {
-  name     = "corp.demo.com"
-  password = "SuperSecretPassw0rd"
-  edition  = "Standard"
-  type     = "MicrosoftAD"
-
-  vpc_settings {
-    vpc_id = #DATA PARA PEGAR id#module.vpc.vpc_id
-    # Only 2 subnets, must be in different AZs
-    subnet_ids = slice(tolist(module.vpc.database_subnets), 0, 2)
-  }
-
-  tags = local.tags
-}
-
-################################################################################
-# RDS Module
-################################################################################
 
 module "db" {
-  source = "../../"
+  source = "terraform-aws-modules/rds/aws"
 
   identifier = local.name
 
-  engine               = "sqlserver-ex"
-  engine_version       = "15.00.4153.1.v1"
-  family               = "sqlserver-ex-15.0" # DB parameter group
-  major_engine_version = "15.00"             # DB option group
-  instance_class       = "db.t3.large"
+  # All available versions: http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt
+  engine               = "mysql"
+  engine_version       = "8.0.27"
+  family               = "mysql8.0" # DB parameter group
+  major_engine_version = "8.0"      # DB option group
+  instance_class       = "db.t4g.large"
 
   allocated_storage     = 20
   max_allocated_storage = 100
 
-  username = "complete_mssql"
-  port     = 1433
-
-  domain               = aws_directory_service_directory.demo.id
-  domain_iam_role_name = aws_iam_role.rds_ad_auth.name
+  db_name  = "completeMysql"
+  username = "complete_mysql"
+  port     = 3306
 
   multi_az               = false
-  subnet_ids             = #DATA PARA PEGAR AS SUBNETSmodule.vpc.database_subnets
+  subnet_ids             = data.aws_subnet_ids.private.ids
   vpc_security_group_ids = [module.security_group.security_group_id]
 
   maintenance_window              = "Mon:00:00-Mon:03:00"
   backup_window                   = "03:00-06:00"
-  enabled_cloudwatch_logs_exports = ["error"]
+  enabled_cloudwatch_logs_exports = ["general"]
   create_cloudwatch_log_group     = true
 
   backup_retention_period = 0
@@ -132,20 +82,73 @@ module "db" {
   create_monitoring_role                = true
   monitoring_interval                   = 60
 
-  options                   = []
+  parameters = [
+    {
+      name  = "character_set_client"
+      value = "utf8mb4"
+    },
+    {
+      name  = "character_set_server"
+      value = "utf8mb4"
+    }
+  ]
+
+  tags = local.tags
+  db_instance_tags = {
+    "Sensitive" = "high"
+  }
+  db_option_group_tags = {
+    "Sensitive" = "low"
+  }
+  db_parameter_group_tags = {
+    "Sensitive" = "low"
+  }
+  db_subnet_group_tags = {
+    "Sensitive" = "high"
+  }
+}
+
+module "db_default" {
+  source = "terraform-aws-modules/rds/aws"
+
+  identifier = "${local.name}-default"
+
+  create_db_option_group    = false
   create_db_parameter_group = false
-  license_model             = "license-included"
-  timezone                  = "GMT Standard Time"
-  character_set_name        = "Latin1_General_CI_AS"
+
+  # All available versions: http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt
+  engine               = "mysql"
+  engine_version       = "8.0.27"
+  family               = "mysql8.0" # DB parameter group
+  major_engine_version = "8.0"      # DB option group
+  instance_class       = "db.t4g.large"
+
+  allocated_storage = 20
+
+  db_name  = "completeMysql"
+  username = "complete_mysql"
+  port     = 3306
+
+  subnet_ids             = data.aws_subnet_ids.private.ids
+  vpc_security_group_ids = [module.security_group.security_group_id]
+
+  maintenance_window = "Mon:00:00-Mon:03:00"
+  backup_window      = "03:00-06:00"
+
+  backup_retention_period = 0
 
   tags = local.tags
 }
 
 module "db_disabled" {
-  source = "../../"
+  source = "terraform-aws-modules/rds/aws"
 
   identifier = "${local.name}-disabled"
-
+  instance_class = "db.t2.large"
+  family               = "mysql8.0"
+  allocated_storage     = 20
+  max_allocated_storage = 100
+  subnet_ids             = data.aws_subnet_ids.private.ids
   create_db_instance        = false
   create_db_parameter_group = false
   create_db_option_group    = false

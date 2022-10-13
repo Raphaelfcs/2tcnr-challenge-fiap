@@ -19,4 +19,6 @@ eksctl create iamserviceaccount \
   kubectl apply -k "github.com/aws/eks-charts/stable/aws-load-balancer-controller/crds?ref=master"
 
 
-https://docs.aws.amazon.com/pt_br/AmazonCloudWatch/latest/monitoring/ContainerInsights-Prometheus-Sample-Workloads-nginx.htmlß
+https://docs.aws.amazon.com/pt_br/AmazonCloudWatch/latest/monitoring/ContainerInsights-Prometheus-Sample-Workloads-nginx.html
+
+https://docs.aws.amazon.com/pt_br/eks/latest/userguide/prometheus.html
