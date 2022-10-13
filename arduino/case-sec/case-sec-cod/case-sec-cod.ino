@@ -29,10 +29,10 @@ if (key == '*' || key == '#')
 position = 0;
 LockedPosition(true);
 }
-if (key == password[position])
-{
+// if (key == password[position])
+// {
 position ++;
-}
+// }
 if (position == 3)
 {
 LockedPosition(false);

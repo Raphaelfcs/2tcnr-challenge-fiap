@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Car;
+use App\Models\Payment;
 use App\Models\User;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -47,8 +48,7 @@ class Controller extends BaseController
 
     public function actionCarSave(Request $request)
     {
-        dd($request->all());
-        auth()->user()->payment()->create([
+        Payment::create([
             "name" => $request->name,
             "address" => $request->address,
             "city" => $request->city,
@@ -61,7 +61,22 @@ class Controller extends BaseController
             "cvv" => $request->cvv,
         ]);
 
-        return redirect()->route('dashboard');
+        return redirect()->route('passwordGenerator');
+    }
+
+    public function passwordGenerator()
+    {
+        return view('car.passwordGenerator');
+    }
+
+    public function carEvaluation()
+    {
+        return view('car.evaluation');
+    }
+
+    public function carEvaluationFinished()
+    {
+        return view('car.evaluationFinished');
     }
 
     public function userPlans()

@@ -25,10 +25,13 @@ Route::get('/', function () {
 
 Route::get('garage', [Controller::class, 'garage'])->name('garage');
 Route::get('plans', [Controller::class, 'plans'])->name('plans');
+Route::get('car/evaluation', [Controller::class, 'carEvaluation'])->name('carEvaluation');
+Route::get('car/evaluation/finished', [Controller::class, 'carEvaluationFinished'])->name('carEvaluationFinished');
 Route::get('car/{car}', [Controller::class, 'showCar'])->name('showCar');
 Route::get('car/{car}/info', [Controller::class, 'showCarInfo'])->name('showCarInfo');
 Route::get('car/{car}/action', [Controller::class, 'actionCar'])->name('actionCar');
 Route::post('car/{car}/action', [Controller::class, 'actionCarSave'])->name('actionCarSave');
+Route::get('car/password/generator', [Controller::class, 'passwordGenerator'])->name('passwordGenerator');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
