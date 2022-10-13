@@ -102,7 +102,13 @@ class User extends Authenticatable
 
     public function planDescription()
     {
-        return self::PLANS[$this->plan] ?? 'Administrador';
+        $admin = 'Administrador';
+
+        if ($this->admin()) {
+            return $admin;
+        }
+
+        return self::PLANS[$this->plan] ?? $admin;
     }
 
     public function getStatus()

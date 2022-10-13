@@ -31,16 +31,16 @@
     --z-tooltip: 10;
     --z-fixed: 100;
 
-    --gradient-color-red: linear-gradient(90deg, 
+    --gradient-color-red: linear-gradient(90deg,
                           hsl(7, 89%, 46%) 15%,
                           hsl(11, 93%, 68%) 100%);
-    --gradient-color-orange: linear-gradient(90deg, 
+    --gradient-color-orange: linear-gradient(90deg,
                             hsl(22, 89%, 46%) 15%,
                             hsl(54, 90%, 45%) 100%);
-    --gradient-color-yellow: linear-gradient(90deg, 
+    --gradient-color-yellow: linear-gradient(90deg,
                             hsl(54, 89%, 46%) 15%,
                             hsl(92, 90%, 45%) 100%);
-    --gradient-color-green: linear-gradient(90deg, 
+    --gradient-color-green: linear-gradient(90deg,
                             hsl(92, 89%, 46%) 15%,
                             hsl(92, 90%, 68%) 100%);
 }
@@ -199,7 +199,7 @@ header{
     height: 150px;
     width: 800px;
     background: #fff;
-    padding: 50px;
+    padding: 30px;
     border-radius: 0.5rem;
 }
 .input-box{
@@ -466,9 +466,9 @@ header{
 
 .battery__card{
     position: relative;
-    width: 15%;
+    width: 35%;
     height: 120px;
-    right: -1200px;
+    right: -980px;
     top: 400px;
     background-color: #eeeff1;
     padding: 1.5rem 2rem;
@@ -500,6 +500,7 @@ header{
 }
 
 .battery__pill{
+    margin-right: auto;
     position: relative;
     width: 75px;
     height: 180px;

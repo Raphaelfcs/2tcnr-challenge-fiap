@@ -17,7 +17,7 @@
     <form action="" method="POST">
         @csrf
 
-        <h3 class="title" style="margin-bottom: 20px">{{ $car->getModalidadeCliente() }} carro: {{ $car->modelo }} / {{ $car->ano }} por R${{ $car->preco }} @if($car->modalidade == 1) / dia @endif</h3>
+        <h3 class="title" style="margin-bottom: 20px">{{ $car->getModalidadeCliente() }} carro: {{ $car->modelo }} - {{ $car->ano }} por R${{ $car->preco }} @if($car->modalidade == 1) / dia @endif</h3>
         <div class="row">
 
             <div class="col">

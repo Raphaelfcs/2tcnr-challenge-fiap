@@ -47,6 +47,7 @@
         </div>
         <div class="form-container">
             <form action="">
+                <h3 style="width: 100%">R${{ $car->preco }} @if($car->modalidade == 1) / dia @endif</h3>
                 <a href="{{ route('actionCar', $car) }}" class="btn">{{ $car->getModalidadeCliente() }} carro</a>
             </form>
         </div>

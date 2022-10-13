@@ -21,8 +21,8 @@ class Analysis extends Model
 
     const STATUS = [
         0 => 'Pendente',
-        1 => 'Aprovado',
-        2 => 'Reprovado',
+        1 => 'Aprovada',
+        2 => 'Reprovada',
     ];
 
     public function getStatus()
