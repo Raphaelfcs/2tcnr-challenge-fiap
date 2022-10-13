@@ -21,7 +21,6 @@ Além disso nosso projeto irá contar com um sistema de monitoramento do veícul
 - Desenvolvimento do sistema de case de segurança
 - Criação do site da webmonitors
 - Integração do site com os provedores de cloud (GCP e AWS)
-- Implementação do back-end
 
 #### Etapa 1
 
@@ -85,8 +84,19 @@ Abaixo temos a integração entre os dois provedores e a topologia geral do proj
 
 ![Arquitetura3](arquitetura/cloud/geral_integracao_aws_iot_gcp.jpg)
 
-#### Etapa 5
+https://www.digitalocean.com/community/tutorials/how-to-install-and-set-up-laravel-with-docker-compose-on-ubuntu-22-04
 
-**Implementação do back-end**
+docker-compose build app
 
-**Ir colocando os passos de desenvolvimento do nosso back-end** --> LEMBRAR
+docker-compose up -d
+
+docker-compose ps
+
+docker-compose exec app ls -l
+
+docker-compose exec app rm -rf vendor composer.lock
+docker-compose exec app composer install
+
+docker-compose exec app php artisan key:generate
+
+docker-compose exec app php artisan migrate

@@ -38,7 +38,7 @@
 <script type="text/javascript">
 
     function getPassword(){
-        $.get("http://localhost:3030/getnumber", function(data, status){
+        $.get("http://ec2-44-204-193-8.compute-1.amazonaws.com:3000/getNumber", function(data, status){
       document.getElementById("password").value = data.number
     });
         

@@ -22,14 +22,14 @@ http.createServer((request, response) => {
         response.setHeader('Access-Control-Allow-Credentials', true);
     
         // Pass to next layer of middleware
-  if (request.method === 'GET' && request.url === '/getnumber') {
+  if (request.method === 'GET' && request.url === '/getNumber') {
     request.pipe(response);
     response.end(getnumber());
   } else {
     response.statusCode = 404;
     response.end();
   }
-}).listen(3030);
+}).listen(3000);
 
 function getnumber() {
     var code = "";
