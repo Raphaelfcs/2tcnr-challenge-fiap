@@ -18,22 +18,7 @@
     <h2>Gere uma senha e envie para desbloquear a caixa de segurança</h2>
     <input type="text" name="" placeholder="A sua senha aparecerá aqui" id="password" readonly="">
     <div id="btn" onclick="getPassword()">Gerar Senha</div>
-    <div id="copyBtn" onclick="$('#myModal').show()">Enviar Senha</div>
-</div>
-<div id="myModal" class="modal" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Aviso</h5>
-            </div>
-            <div class="modal-body">
-                <p>Senha enviada com sucesso.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" onclick="location.href = '{{ route('carEvaluation') }}'" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-            </div>
-        </div>
-    </div>
+    <div id="copyBtn" onclick="location.href = '{{ route('carEvaluation') }}'">Enviar Senha</div>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script type="text/javascript">

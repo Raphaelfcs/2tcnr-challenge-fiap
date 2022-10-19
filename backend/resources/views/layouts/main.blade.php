@@ -16,7 +16,9 @@
         <aside>
             <div class="top">
                 <div class="logo">
-                    <img src="/img/logo.png">
+                    <a href="/">
+                        <img src="/img/logo.png">
+                    </a>
                 </div>
                 <div class="close" id="close-btn">
                     <span class="material-icons-sharp">close</span>
@@ -84,49 +86,59 @@
             </div>
             <div class="sales-analytics">
             <h2>Seus Produtos</h2>
-            <div class="item online">
-                <div class="icon">
-                    <span class="material-icons-sharp">saved_search</span>
-                </div>
-                <div class="right">
-                    <div class="info">
-                        <h3>MONITORAMENTO AVANÇADO</h3>
-                        <small class="text-muted">2 anos</small>
+            @if(auth()->user()->planDescription() != 'Plano Básico')
+                <div class="item online">
+                    <div class="icon">
+                        <span class="material-icons-sharp">saved_search</span>
                     </div>
-                    <h5 class="success"></h5>
-                    <h3></h3>
+                    <div class="right">
+                        <div class="info">
+                            <h3>MONITORAMENTO AVANÇADO</h3>
+                            @if(auth()->user()->planDescription() == 'Plano Empresa')
+                                <small class="text-muted">Avançado</small>
+                            @else
+                                <small class="text-muted">Individual</small>
+                            @endif
+                        </div>
+                        <h5 class="success"></h5>
+                        <h3></h3>
+                    </div>
                 </div>
-            </div>
+                <div class="item customers">
+                    <div class="icon">
+                        <span class="material-icons-sharp">verified_user</span>
+                    </div>
+                    <div class="right">
+                        <div class="info">
+                            <h3>SEGURANÇA VEICULAR</h3>
+                            @if(auth()->user()->planDescription() == 'Plano Empresa')
+                                <small class="text-muted">Completa</small>
+                            @else
+                                <small class="text-muted">Individual</small>
+                            @endif
+                        </div>
+                        <h5 class="success"></h5>
+                        <h3></h3>
+                    </div>
+                </div>
+            @endif
             <div class="item offline">
                 <div class="icon">
                     <span class="material-icons-sharp">support_agent</span>
                 </div>
                 <div class="right">
                     <div class="info">
-                        <h3>SUPORTE BUSINESS</h3>
-                        <small class="text-muted">1 ano</small>
+                        <h3>SUPORTE @if(auth()->user()->planDescription() == 'Plano Empresa') BUSINESS @endif</h3>
+                        @if(auth()->user()->planDescription() == 'Plano Empresa')
+                            <small class="text-muted">24h todos os dias</small>
+                        @elseif(auth()->user()->planDescription() == 'Plano Básico')
+                            <small class="text-muted">E-mail</small>
+                        @else
+                            <small class="text-muted">Horário Comercial</small>
+                        @endif
                     </div>
                     <h5 class="danger"></h5>
                     <h3></h3>
-                </div>
-            </div>
-            <div class="item customers">
-                <div class="icon">
-                    <span class="material-icons-sharp">verified_user</span>
-                </div>
-                <div class="right">
-                    <div class="info">
-                        <h3>SEGURANÇA VEICULAR</h3>
-                        <small class="text-muted">1 ano</small>
-                    </div>
-                    <h5 class="success"></h5>
-                    <h3></h3>
-                </div>
-            </div>
-            <div class="item add-product">
-                <div>
-                    <span class="material-icons-sharp">add</span>
-                    <h3>Adquirir novos serviços</h3>
                 </div>
             </div>
         </div>

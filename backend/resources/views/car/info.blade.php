@@ -17,17 +17,8 @@
 
     <div class="bx bx-menu" id="menu-icon"></div>
 
-    <ul class="navbar">
-        <li><a href="../index.html#home">Início</a></li>
-        <li><a href="../index.html#ride">Serviços</a></li>
-        <li><a href="../planos/plano.html">Planos</a></li>
-        <li><a href="../garage/garage.html">Garagem</a></li>
-        <li><a href="../index.html#reviews">Sobre</a></li>
-        <li><a href="../index.html#reviews">Opiniões</a></li>
-    </ul>
     <div class="header-btn">
-        <a href="../cadastro/cadastro.html" class="sign-up">Cadastre-se</a>
-        <a href="../login/login.html" class="sign-in">Entrar</a>
+        <a href="/car/{{ $car->id }}" class="sign-in">Voltar</a>
     </div>
 </header>
 

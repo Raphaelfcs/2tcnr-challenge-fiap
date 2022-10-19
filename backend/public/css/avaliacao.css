@@ -114,12 +114,12 @@ form .textarea textarea{
 .textarea textarea:focus{
   border-color: #fe5b3d;
 }
-form .btn{
+.btn{
   height: 45px;
   width: 100%;
   margin: 15px 0;
 }
-form .btn button{
+button {
   height: 100%;
   width: 100%;
   border: 1px solid #fe5b3d;;

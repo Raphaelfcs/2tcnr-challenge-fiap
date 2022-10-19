@@ -161,12 +161,12 @@ img {
   font-size: var(--tiny-font-size);
 }
 
-.card__pricing-number, 
+.card__pricing-number,
 .card__pricing-month {
   color: var(--white-color);
 }
 
-.card__pricing::after, 
+.card__pricing::after,
 .card__pricing::before {
   content: '';
   position: absolute;
@@ -216,6 +216,14 @@ img {
   color: var(--white-color);
   cursor: pointer;
   transition: .4s;
+}
+
+.back-btn {
+    background: linear-gradient(157deg, var(--first-color-light) -12%, var(--first-color) 109%);
+    color: var(--white-color);
+    cursor: pointer;
+    transition: .4s;
+    border: none;
 }
 
 .card__button:hover {

@@ -29,6 +29,7 @@
                 <button type="button" onclick="location.href = '{{ route('carEvaluationFinished') }}'">Enviar</button>
             </div>
         </form>
+        <button type="button" style="margin-top: 15px; width: 80px; border-radius: 10px; padding: 5px" onclick="location.href = '/'">Pular</button>
     </div>
 </div>
 <script>

@@ -14,6 +14,7 @@
 </head>
 <body>
 <section class="card container grid">
+    <button class="back-btn" onclick="location.href = '/'" style="position: absolute; top: 20px; left: 20px; size: 60px; width: 50px; height: 50px; border-radius: 100%;"><</button>
     <div class="card__container grid">
         <!--==================== CARD 1 ====================-->
         <article class="card__content grid">
@@ -26,7 +27,7 @@
 
             <header class="card__header">
                 <div class="card__header-circle grid">
-                    <img src="../img/free-coin.png" alt="" class="card__header-img">
+                    <img src="/img/free-coin.png" alt="" class="card__header-img">
                 </div>
 
                 <span class="card__header-subtitle">Plano Grátis</span>
@@ -58,7 +59,7 @@
 
             <header class="card__header">
                 <div class="card__header-circle grid">
-                    <img src="../img/pro-coin.png" alt="" class="card__header-img">
+                    <img src="/img/pro-coin.png" alt="" class="card__header-img">
                 </div>
 
                 <span class="card__header-subtitle">Plano individual</span>
@@ -98,7 +99,7 @@
 
             <header class="card__header">
                 <div class="card__header-circle grid">
-                    <img src="../img/enterprise-coin.png" alt="" class="card__header-img">
+                    <img src="/img/enterprise-coin.png" alt="" class="card__header-img">
                 </div>
 
                 <span class="card__header-subtitle">Plano empresarial</span>

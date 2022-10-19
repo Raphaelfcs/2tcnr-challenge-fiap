@@ -52,6 +52,11 @@ Route::middleware(['auth', 'check.plan'])->group(function() {
     Route::get('pending/analysis', [Controller::class, 'pendingAnalysis'])->name('pendingAnalysis');
     Route::get('reproved/analysis', [Controller::class, 'reprovedAnalysis'])->name('reprovedAnalysis');
 
+    Route::get('report', [Controller::class, 'report'])->name('report');
+    Route::get('report/finished', [Controller::class, 'reportFinished'])->name('report.finished');
+
+    Route::get('config', [Controller::class, 'config'])->name('config');
+
     Route::get('car', [CarsController::class, 'create'])->name('car.create');
     Route::post('car', [CarsController::class, 'save'])->name('car.save');
     Route::delete('car/{car}', [CarsController::class, 'delete'])->name('car.delete');

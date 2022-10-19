@@ -10,10 +10,13 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\Cookie;
 
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    const COOKIE_EVALUATION = 'webmonitors_evaluation';
 
     public function garage()
     {
@@ -69,9 +72,18 @@ class Controller extends BaseController
         return view('car.passwordGenerator');
     }
 
-    public function carEvaluation()
+    public function carEvaluation(Request $request)
     {
-        return view('car.evaluation');
+        if ($request->hasCookie(self::COOKIE_EVALUATION)) {
+            return redirect()->to('/');
+        }
+
+        return response(view('car.evaluation'))
+            ->cookie(
+                self::COOKIE_EVALUATION,
+                true,
+                time() + (10 * 365 * 24 * 60 * 60)
+            );
     }
 
     public function carEvaluationFinished()
@@ -217,5 +229,20 @@ class Controller extends BaseController
         session()->flash('success', 'Análise do usuário reprovado com sucesso!');
 
         return redirect()->back();
+    }
+
+    public function report()
+    {
+        return view('report');
+    }
+
+    public function reportFinished()
+    {
+        return view('reportFinished');
+    }
+
+    public function config()
+    {
+        return view('config');
     }
 }

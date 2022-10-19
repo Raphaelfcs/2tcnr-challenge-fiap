@@ -18,16 +18,20 @@
     <div class="bx bx-menu" id="menu-icon"></div>
 
     <ul class="navbar">
-        <li><a href="../index.html#home">Início</a></li>
-        <li><a href="../index.html#ride">Serviços</a></li>
-        <li><a href="../planos/plano.html">Planos</a></li>
-        <li><a href="../garage/garage.html">Garagem</a></li>
-        <li><a href="../index.html#reviews">Sobre</a></li>
-        <li><a href="../index.html#reviews">Opiniões</a></li>
+        <li><a href="/">Início</a></li>
+        <li><a href="/#ride">Serviços</a></li>
+        <li><a href="/plans">Planos</a></li>
+        <li><a href="/garage">Garagem</a></li>
+        <li><a href="/#reviews">Sobre</a></li>
+        <li><a href="/#reviews">Opiniões</a></li>
     </ul>
     <div class="header-btn">
-        <a href="../cadastro/cadastro.html" class="sign-up">Cadastre-se</a>
-        <a href="../login/login.html" class="sign-in">Entrar</a>
+        @if(auth()->check())
+            <a href="/dashboard" class="sign-in">Dashboard</a>
+        @else
+            <a href="/register" class="sign-up">Cadastre-se</a>
+            <a href="/login" class="sign-in">Entrar</a>
+        @endif
     </div>
 </header>
 <main class="main">

@@ -59,6 +59,7 @@
     --white: hsl(0, 0%, 100%);
 
     --gradient: linear-gradient(to top, var(--alice-blue-2), var(--alice-blue-3));
+    --gradient-nav: linear-gradient(#fe5b3d, #ffac38);
 
 
     --ff-nunito: 'Poppins', sans-serif;
@@ -177,7 +178,7 @@ body{
     content: '';
     width: 0;
     height: 3px;
-    background: var(--gradient);
+    background: var(--gradient-nav);
     position: absolute;
     bottom: -4px;
     left: 0;
