@@ -45,24 +45,6 @@
             <img src="/img/play.png" alt="">
         </div>
     </div>
-
-    <div class="form-container">
-        <form action="">
-            <div class="input-box">
-                <span>Localização</span>
-                <input type="search" name="" id="" placeholder="Procure a localização">
-            </div>
-            <div class="input-box">
-                <span>Data de Retirada</span>
-                <input type="date" name="" id="">
-            </div>
-            <div class="input-box">
-                <span>Data de Retorno</span>
-                <input type="date" name="" id="">
-            </div>
-            <input type="submit" name="" id="" class="btn" value="Pesquisar">
-        </form>
-    </div>
 </section>
 <!-- Ride -->
 <section class="ride" id="ride">
