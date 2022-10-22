@@ -40,10 +40,6 @@
     <div class="text">
         <h1><span>Veículos</span> monitorados<br>e totalmente seguro</h1>
         <p>Aqui você encontra os carros mais bem avaliados no mercado.</p>
-        <div class="app-stores">
-            <img src="/img/ios.png" alt="">
-            <img src="/img/play.png" alt="">
-        </div>
     </div>
 </section>
 <!-- Ride -->
