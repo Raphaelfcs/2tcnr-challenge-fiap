@@ -32,6 +32,7 @@ Route::get('car/{car}/info', [Controller::class, 'showCarInfo'])->name('showCarI
 Route::get('car/{car}/action', [Controller::class, 'actionCar'])->name('actionCar');
 Route::post('car/{car}/action', [Controller::class, 'actionCarSave'])->name('actionCarSave');
 Route::get('car/password/generator', [Controller::class, 'passwordGenerator'])->name('passwordGenerator');
+Route::get('about', [Controller::class, 'about'])->name('about');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

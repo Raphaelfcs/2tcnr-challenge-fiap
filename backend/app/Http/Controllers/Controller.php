@@ -245,4 +245,9 @@ class Controller extends BaseController
     {
         return view('config');
     }
+
+    public function about()
+    {
+        return view('about');
+    }
 }
