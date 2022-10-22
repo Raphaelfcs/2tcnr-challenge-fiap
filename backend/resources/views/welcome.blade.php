@@ -198,7 +198,7 @@
             <span>Sobre Nós</span>
             <p>Somos uma startup de tecnologia voltada para ambientes de nuvem. Trabalhamos com soluções, produtos e consultorias de negócios com tecnologia em Cloud computing. Nosso propósito é utilizar da tecnologia para criar novas soluções/produtos que sejam mais eficazes, sustentáveis, automatizado e econômico.</p>
             <p>Buscamos ajudar nos negócios dos nossos clientes que estão se transformando digitalmente. Sendo assim, utilizamos as melhores tecnologias disponíveis no mercado atual para que nosso cliente consiga alcançar seus objetivos.</p>
-            <a href="about/about.html" class="btn">Saiba mais</a>
+            <a href="../../../../../frontend/about/about.html" class="btn">Saiba mais</a>
         </div>
     </div>
 </section>
