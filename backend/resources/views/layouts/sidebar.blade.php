@@ -17,10 +17,10 @@
         <span class="material-icons-sharp">receipt_long</span>
         <h3>Relatório</h3>
     </a>
-{{--    <a href="#">--}}
-{{--        <span class="material-icons-sharp">insights</span>--}}
-{{--        <h3>Dashboard</h3>--}}
-{{--    </a>--}}
+    <a href="http://webmonitorsgrafana.developcloudit.com">
+        <span class="material-icons-sharp">insights</span>
+        <h3>Dashboard</h3>
+    </a>
 {{--    <a href="#">--}}
 {{--        <span class="material-icons-sharp">mail_outline</span>--}}
 {{--        <h3>Mensagens</h3>--}}
