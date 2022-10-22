@@ -60,7 +60,7 @@ Route::middleware(['auth', 'check.plan'])->group(function() {
     Route::get('car', [CarsController::class, 'create'])->name('car.create');
     Route::post('car', [CarsController::class, 'save'])->name('car.save');
     Route::delete('car/{car}', [CarsController::class, 'delete'])->name('car.delete');
-    Route::get('cars', [CarsController::class, 'index'])->name('cars.index');
+    Route::get('mycarspanel', [CarsController::class, 'index'])->name('cars.index');
 });
 
 Route::middleware(['auth', 'check.plan', 'admin'])->group(function() {
