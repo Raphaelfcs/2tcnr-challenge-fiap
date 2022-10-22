@@ -13,7 +13,7 @@
 <body>
 <!-- Header -->
 <header>
-    <a href="../index.html" class="logo"><img src="../img/logo.png" alt=""></a>
+    <a href="/" class="logo"><img src="../img/logo.png" alt=""></a>
 
     <div class="bx bx-menu" id="menu-icon"></div>
 
