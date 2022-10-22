@@ -83,20 +83,3 @@ Abaixo temos o desenho de arquitetura no provedor da GCP:
 Abaixo temos a integração entre os dois provedores e a topologia geral do projeto:
 
 ![Arquitetura3](arquitetura/cloud/geral_integracao_aws_iot_gcp.jpg)
-
-https://www.digitalocean.com/community/tutorials/how-to-install-and-set-up-laravel-with-docker-compose-on-ubuntu-22-04
-
-docker-compose build app
-
-docker-compose up -d
-
-docker-compose ps
-
-docker-compose exec app ls -l
-
-docker-compose exec app rm -rf vendor composer.lock
-docker-compose exec app composer install
-
-docker-compose exec app php artisan key:generate
-
-docker-compose exec app php artisan migrate
