@@ -15,12 +15,12 @@
     <div class="bx bx-menu" id="menu-icon"></div>
 
     <ul class="navbar">
-        <li><a href="../index.html#home">Início</a></li>
-        <li><a href="../index.html#ride">Serviços</a></li>
-        <li><a href="../planos/plano.html">Planos</a></li>
-        <li><a href="../garage/garage.html">Garagem</a></li>
-        <li><a href="../index.html#reviews">Sobre</a></li>
-        <li><a href="../index.html#reviews">Opiniões</a></li>
+    <li><a href="/">Início</a></li>
+        <li><a href="#ride">Serviços</a></li>
+        <li><a href="{{ route('plans') }}">Planos</a></li>
+        <li><a href="{{ route('garage') }}">Garagem</a></li>
+        <li><a href="#about">Sobre</a></li>
+        <li><a href="#reviews">Opiniões</a></li>
     </ul>
 </header>
 <section class="area-login">
