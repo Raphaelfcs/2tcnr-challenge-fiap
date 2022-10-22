@@ -1,0 +1,11 @@
+
+insert into exemplocarroum (rpm,kmRodado,nivelOleo,tempMotor) value('86','50.000','80','1000');
+
+var carro_1_hi = msg.payload
+msg.topic = "INSERT INTO exemplocarroum VALUES ("+carro_1_hi+")";
+return msg;
+
+
+var carro_2_hi = msg.payload
+msg.topic = "INSERT INTO exemplocarrodois VALUES ("+carro_2_hi+")";
+return msg;

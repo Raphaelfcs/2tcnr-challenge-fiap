@@ -1,0 +1,297 @@
+[
+    {
+        "id": "a11cc2bc6616c47d",
+        "type": "tab",
+        "label": "2tcnr-next-2ano",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "95eaf742a0118c6c",
+        "type": "mysql",
+        "z": "a11cc2bc6616c47d",
+        "mydb": "b95f53c2b690d2b7",
+        "name": "",
+        "x": 1760,
+        "y": 120,
+        "wires": [
+            [
+                "1187362dd64bd6ed"
+            ]
+        ]
+    },
+    {
+        "id": "1187362dd64bd6ed",
+        "type": "debug",
+        "z": "a11cc2bc6616c47d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2030,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "5474c54e8682c06f",
+        "type": "inject",
+        "z": "a11cc2bc6616c47d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.15",
+        "topic": "",
+        "payload": "'86','50.000','80','1000'",
+        "payloadType": "str",
+        "x": 990,
+        "y": 20,
+        "wires": [
+            [
+                "8a8e80dc6f63e077",
+                "3a7cbd73ec2d1fd8"
+            ]
+        ]
+    },
+    {
+        "id": "8a8e80dc6f63e077",
+        "type": "ui_gauge",
+        "z": "a11cc2bc6616c47d",
+        "name": "",
+        "group": "701f6525cc5e1b6c",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "temp-motor-um",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1024",
+        "colors": [
+            "#0006b3",
+            "#e68600",
+            "#f03c00"
+        ],
+        "seg1": "40",
+        "seg2": "100",
+        "className": "",
+        "x": 1260,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "cd577a4197b818bf",
+        "type": "inject",
+        "z": "a11cc2bc6616c47d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "20",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.3",
+        "topic": "",
+        "payload": "'86','50.000','80','200'",
+        "payloadType": "str",
+        "x": 990,
+        "y": 220,
+        "wires": [
+            [
+                "8a8e80dc6f63e077",
+                "3a7cbd73ec2d1fd8"
+            ]
+        ]
+    },
+    {
+        "id": "748b4f44fdfad64e",
+        "type": "inject",
+        "z": "a11cc2bc6616c47d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.15",
+        "topic": "",
+        "payload": "'120','11.000','98','800'",
+        "payloadType": "str",
+        "x": 990,
+        "y": 400,
+        "wires": [
+            [
+                "2cf0f7c4b1b1cfa9",
+                "db8c9a5b9c29fece"
+            ]
+        ]
+    },
+    {
+        "id": "2cf0f7c4b1b1cfa9",
+        "type": "ui_gauge",
+        "z": "a11cc2bc6616c47d",
+        "name": "",
+        "group": "701f6525cc5e1b6c",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "temp-motor-dois",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1024",
+        "colors": [
+            "#0006b3",
+            "#e68600",
+            "#f03c00"
+        ],
+        "seg1": "40",
+        "seg2": "100",
+        "className": "",
+        "x": 1250,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "c77e795b3d4648c7",
+        "type": "inject",
+        "z": "a11cc2bc6616c47d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "20",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.3",
+        "topic": "",
+        "payload": "'120','11.000','98','400'",
+        "payloadType": "str",
+        "x": 990,
+        "y": 580,
+        "wires": [
+            [
+                "2cf0f7c4b1b1cfa9",
+                "db8c9a5b9c29fece"
+            ]
+        ]
+    },
+    {
+        "id": "3a7cbd73ec2d1fd8",
+        "type": "function",
+        "z": "a11cc2bc6616c47d",
+        "name": "",
+        "func": "var carro_1_hi = msg.payload\nmsg.topic = \"INSERT INTO exemplocarroum VALUES (\"+carro_1_hi+\")\";\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1540,
+        "y": 120,
+        "wires": [
+            [
+                "95eaf742a0118c6c"
+            ]
+        ]
+    },
+    {
+        "id": "db8c9a5b9c29fece",
+        "type": "function",
+        "z": "a11cc2bc6616c47d",
+        "name": "",
+        "func": "var carro_2_hi = msg.payload\nmsg.topic = \"INSERT INTO exemplocarrodois VALUES (\"+carro_2_hi+\")\";\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1540,
+        "y": 480,
+        "wires": [
+            [
+                "786c4a58c7f50e65"
+            ]
+        ]
+    },
+    {
+        "id": "786c4a58c7f50e65",
+        "type": "mysql",
+        "z": "a11cc2bc6616c47d",
+        "mydb": "b95f53c2b690d2b7",
+        "name": "",
+        "x": 1780,
+        "y": 480,
+        "wires": [
+            [
+                "5895016d82938d60"
+            ]
+        ]
+    },
+    {
+        "id": "5895016d82938d60",
+        "type": "debug",
+        "z": "a11cc2bc6616c47d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1990,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "b95f53c2b690d2b7",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "doistcnriot.czgypqecbnb1.us-east-1.rds.amazonaws.com",
+        "port": "3306",
+        "db": "monitorar",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "701f6525cc5e1b6c",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "830f4e10f140291c",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "830f4e10f140291c",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
