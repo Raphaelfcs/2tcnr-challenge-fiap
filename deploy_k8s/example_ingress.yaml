@@ -7,7 +7,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: a5b460d95a2e8460c94bdcdafdb90215-71949636.us-east-1.elb.amazonaws.com
+    - host: webmonitorsgrafana.developcloudit.com
       http:
         paths:
           - pathType: ImplementationSpecific
